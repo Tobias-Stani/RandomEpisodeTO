@@ -102,51 +102,80 @@ $randomEpisode = $client->getRandomEpisode($title);
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
         <style>
-            body {
-                margin: 0;
-                padding: 0;
-                height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: #282c34;
-                color: white;
-                flex-direction: column;
-            }
-        
-            .container {
-                width: 100%;
-                max-width: 600px;
-                padding: 20px;
-            }
-        
-            .form-container {
-                width: 100%;
-                max-width: 600px;
-                margin-bottom: 20px;
-            }
-        
-            .card {
-                background-color: rgba(0, 0, 0, 0.8);
-                padding: 20px;
-                border-radius: 10px;
-                text-align: center;
-                margin: 20px 0;
-                width: 100%;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-        
-            .card img {
-                width: 100%;
-                border-radius: 10px;
-            }
-        
-            .card h1,
-            .card h2,
-            .card p {
-                margin: 10px 0;
-            }
-        </style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #282c34;
+        color: white;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 80%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1; /* Permite que el contenedor crezca para ocupar el espacio restante */
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 20px;
+        padding-top: 5%;
+        box-sizing: border-box;
+    }
+
+    .card {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 20px 0;
+        width: 100%;
+        max-width: 600px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .card h1,
+    .card h2,
+    .card p {
+        margin: 10px 0;
+    }
+
+    footer {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #222;
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .container, .form-container, .card {
+            max-width: 90%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container, .form-container, .card {
+            max-width: 95%;
+        }
+    }
+</style>
 
 </head>
 
@@ -171,6 +200,13 @@ $randomEpisode = $client->getRandomEpisode($title);
             <?php endif; ?>
         <?php endif; ?>
     </div>
+
+    <footer>
+        <p>
+            Made with love by 🫶: <a href="https://www.linkedin.com/in/tobias-stanislavsky" target="_blank">TS</a>
+        </p>
+    </footer>
+
 </body>
 
 <script>
