@@ -11,35 +11,29 @@ class TMDbApiClient
 
     public function getRandomEpisode(string $title): ?array
     {
-        // Paso 1: Obtener el ID de la serie
         $seriesData = $this->fetchSeriesData($title);
         if ($seriesData === null || count($seriesData['results']) === 0) {
             return null;
         }
         $seriesId = $seriesData['results'][0]['id'];
 
-        // Paso 2: Obtener la cantidad de temporadas
         $showData = $this->fetchShowData($seriesId);
         if ($showData === null) {
             return null;
         }
         $totalSeasons = $showData['number_of_seasons'];
 
-        // Paso 3: Seleccionar una temporada aleatoria
         $randomSeason = rand(1, $totalSeasons);
 
-        // Paso 4: Obtener los episodios de la temporada seleccionada
         $seasonData = $this->fetchSeasonData($seriesId, $randomSeason);
         if ($seasonData === null) {
             return null;
         }
         $totalEpisodes = count($seasonData['episodes']);
 
-        // Paso 5: Seleccionar un episodio aleatorio
         $randomEpisode = rand(0, $totalEpisodes - 1);
         $episode = $seasonData['episodes'][$randomEpisode];
 
-        // Paso 6: Retornar los datos del episodio
         return [
             'title' => $episode['name'],
             'season' => $randomSeason,
@@ -82,7 +76,7 @@ class TMDbApiClient
 $apiKey = '65bcbdb68a231d56f86ff81adb62daf8';  // Reemplaza con tu clave API real
 $client = new TMDbApiClient($apiKey);
 
-$randomEpisode = $client->getRandomEpisode('The Office');
+$randomEpisode = $client->getRandomEpisode('Drake y Josh');
 
 ?>
 
@@ -96,9 +90,6 @@ $randomEpisode = $client->getRandomEpisode('The Office');
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <style>
         body {
             margin: 0;
@@ -107,28 +98,26 @@ $randomEpisode = $client->getRandomEpisode('The Office');
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('<?php echo $randomEpisode['image']; ?>');
-            background-size: cover;
-            background-position: center;
         }
 
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
+        .card {
+            /* background-color: #fff; */
             border-radius: 10px;
-            text-align: center;
-            color: #ffff;
-            max-width: 80%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            max-width: 50%;
             width: 100%;
-            /* Para asegurar que el contenedor no sea más pequeño que el contenido */
-            box-sizing: border-box;
-            margin: 0 auto;
+            margin: 20px;
         }
 
-        h1,
-        h2,
-        p {
-            margin: 10px 0;
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
         }
 
         footer {
@@ -143,14 +132,19 @@ $randomEpisode = $client->getRandomEpisode('The Office');
 </head>
 
 <body>
-    <div class="overlay">
+    <div class="card">
         <?php if ($randomEpisode !== null): ?>
-            <h1><?php echo "Season " . $randomEpisode['season'] . " - Episode " . $randomEpisode['episode']; ?></h1>
-            <h2><?php echo $randomEpisode['title']; ?></h2>
-            <p><?php echo $randomEpisode['overview']; ?></p>
-            <button id="reload">Random Episode!</button>
+            <img src="<?php echo $randomEpisode['image']; ?>" alt="Imagen del episodio">
+            <div class="card-body">
+                <h1><?php echo "Season " . $randomEpisode['season'] . " - Episode " . $randomEpisode['episode']; ?></h1>
+                <h2><?php echo $randomEpisode['title']; ?></h2>
+                <p><?php echo $randomEpisode['overview']; ?></p>
+                <button id="reload">Random Episode!</button>
+            </div>
         <?php else: ?>
-            <p>No se pudo obtener un episodio aleatorio.</p>
+            <div class="card-body">
+                <p>No se pudo obtener un episodio aleatorio.</p>
+            </div>
         <?php endif; ?>
     </div>
 
