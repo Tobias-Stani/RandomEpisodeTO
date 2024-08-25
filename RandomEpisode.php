@@ -208,6 +208,7 @@ $randomEpisode = $client->getRandomEpisode($title);
         <p>
             Made with love by 🫶: <a href="https://www.linkedin.com/in/tobias-stanislavsky" target="_blank">TS</a>
         </p>
+        <a href="/qr.php">qr generator</a>
     </footer>
 
 </body>
