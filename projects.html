@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        main.container-fluid {
+            max-width: 80%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .card{
+            margin-top: 5%;
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .card-title {
+            margin: 0 0 0.5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .card-text {
+            margin: 0 0 1rem;
+            color: #666;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #007bff;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        a.github-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            font-size: 1.1rem;
+            color: #007bff;
+            text-decoration: none;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        a.github-link:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <main class="container-fluid">
+        <h1>Algunos de mis proyectos</h1>
+
+        <article class="card">
+            <div class="card-body">
+                <h5 class="card-title">Qr generator</h5>
+                <p class="card-text">Reloj de este proyecto. Explica brevemente qué hace y por qué es interesante.</p>
+                <a href="/qr.php" class="btn">Ingresar</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-body">
+                <h5 class="card-title">Random Episodes</h5>
+                <p class="card-text">Reloj de este proyecto. Explica brevemente qué hace y por qué es interesante.</p>
+                <a href="/RandomEpisode.php" class="btn">Ingresar</a>
+            </div>
+        </article>
+
+        <p>Para conocerme mas ingresa a mi GitHub</p>
+        <a href="https://github.com/Tobias-Stani" class="github-link">GitHub</a>
+    </main>
+</body>
+</html>

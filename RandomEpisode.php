@@ -204,11 +204,12 @@ $randomEpisode = $client->getRandomEpisode($title);
         <?php endif; ?>
     </div>
 
+    <p>Mira mas <a href="/projects.html">proyectos</a></p>
+
     <footer>
         <p>
             Made with love by 🫶: <a href="https://www.linkedin.com/in/tobias-stanislavsky" target="_blank">TS</a>
         </p>
-        <a href="/qr.php">qr generator</a>
     </footer>
 
 </body>

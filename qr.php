@@ -88,6 +88,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['link'])) {
         <button type="submit">Generar QR</button>
     </form>
 
+    <p>Mira mas <a href="/projects.html">proyectos</a></p>
+
     <?php if (isset($qrImageData) && !empty($qrImageData)): ?>
         <h2>Código QR generado:</h2>
         <img src="<?= htmlspecialchars($qrImageData) ?>" alt="Código QR"><br>
