@@ -1,5 +1,8 @@
 <?php
 
+ini_set('display_errors', 0);
+error_reporting(E_ALL & ~E_WARNING);
+
 class TMDbApiClient
 {
     private $apiKey;
@@ -196,7 +199,7 @@ $randomEpisode = $client->getRandomEpisode($title);
             </div>
         <?php else: ?>
             <?php if (!empty($title)): ?>
-                <p>No se pudo obtener un episodio aleatorio. Intenta con otro título.</p>
+                <p>No se pudo obtener un episodio aleatorio. Intenta escribir bien el titulo.</p>
             <?php endif; ?>
         <?php endif; ?>
     </div>
