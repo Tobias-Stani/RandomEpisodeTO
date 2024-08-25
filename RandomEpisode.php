@@ -183,13 +183,13 @@ $randomEpisode = $client->getRandomEpisode($title);
     <div class="container">
         <form class="form-container" method="get">
             <input type="text" name="title" placeholder="Ingresa el nombre de la serie" value="<?php echo htmlspecialchars($title); ?>">
-            <button type="submit">Buscar Episodio Random</button>
+            <button type="submit">Enter the series</button>
         </form>
 
         <?php if ($randomEpisode !== null): ?>
             <div class="card">
                 <img src="<?php echo $randomEpisode['image']; ?>" alt="Imagen del episodio">
-                <h1><?php echo "Temporada " . $randomEpisode['season'] . " - Episodio " . $randomEpisode['episode']; ?></h1>
+                <h1><?php echo "Season " . $randomEpisode['season'] . " - Episode " . $randomEpisode['episode']; ?></h1>
                 <h2><?php echo $randomEpisode['title']; ?></h2>
                 <p><?php echo $randomEpisode['overview']; ?></p>
                 <button id="reload">Random Episode!</button>
