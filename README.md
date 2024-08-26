@@ -1,1 +1,1 @@
-https://randomepisodes.zeabur.app/RandomEpisode.php
+https://randomepisodes.zeabur.app/projects.html
