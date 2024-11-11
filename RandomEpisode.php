@@ -86,7 +86,7 @@ class TMDbApiClient
 }
 
 // Ejemplo de uso
-$apiKey = '65bcbdb68a231d56f86ff81adb62daf8';  // Reemplaza con tu clave API real
+$apiKey = '#';  // Reemplaza con tu clave API real
 $client = new TMDbApiClient($apiKey);
 
 $title = $_GET['title'] ?? '';
