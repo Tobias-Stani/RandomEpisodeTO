@@ -39,7 +39,6 @@ class TMDbApiClient
         $randomEpisode = rand(0, $totalEpisodes - 1);
         $episode = $seasonData['episodes'][$randomEpisode];
 
-        // Paso 6: Retornar los datos del episodio
         return [
             'title' => $episode['name'],
             'season' => $randomSeason,
